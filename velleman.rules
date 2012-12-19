@@ -1,0 +1,19 @@
+# velleman.rules a udev rules file for velleman K8055/VM110.
+# Put this file in /etc/udev/rules.d
+#
+# To access the devices under a regular user account, you must
+# be in the k8055 group. 
+#
+# You can add a RUN="..." attribute to run some arbitrary script
+# when the device is plugged in.
+
+SUBSYSTEM !="usb_device", ACTION !="add", GOTO="velleman_rules_end"
+
+SYSFS{idVendor}=="10cf", SYSFS{idProduct}=="5500", SYMLINK+="k8055_0"
+SYSFS{idVendor}=="10cf", SYSFS{idProduct}=="5501", SYMLINK+="k8055_1"
+SYSFS{idVendor}=="10cf", SYSFS{idProduct}=="5502", SYMLINK+="k8055_2"
+SYSFS{idVendor}=="10cf", SYSFS{idProduct}=="5503", SYMLINK+="k8055_3"
+
+MODE="0660", GROUP="k8055"
+
+LABEL="velleman_rules_end"

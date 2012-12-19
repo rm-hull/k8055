@@ -1,0 +1,1422 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>K8055QT</class>
+<comment>Python:#from kdecore import *
+Python:from kdeui import *
+Python:from pyk8055 import *
+</comment>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>K8055QT</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>600</width>
+            <height>314</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>K8055 Status</string>
+    </property>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>OutputGroup</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>320</x>
+                <y>70</y>
+                <width>270</width>
+                <height>51</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Digital Output</string>
+        </property>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>OutputBox5</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>20</y>
+                    <width>30</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>5</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital Output 5</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>OutputBox6</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>169</x>
+                    <y>20</y>
+                    <width>30</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>6</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital Output 6</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>OutputBox7</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>199</x>
+                    <y>20</y>
+                    <width>30</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>7</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital Output 7</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>OutputBox8</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>229</x>
+                    <y>20</y>
+                    <width>30</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>8</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital Output 8</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>OutputBox1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>30</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>1</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital Output 1</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>OutputBox2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>42</x>
+                    <y>20</y>
+                    <width>30</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>2</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital Output 2</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>OutputBox3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>76</x>
+                    <y>20</y>
+                    <width>30</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>3</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital Output 3</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>OutputBox4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>110</x>
+                    <y>20</y>
+                    <width>30</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>4</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital Output 4</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QButtonGroup">
+        <property name="name">
+            <cstring>InputGroup</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>320</x>
+                <y>130</y>
+                <width>270</width>
+                <height>70</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Digital Input</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>DigitaltextLabel1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>18</x>
+                    <y>40</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>1</string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>DigitaltextLabel4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>170</x>
+                    <y>40</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>4</string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>DigitaltextLabel5</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>40</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>5</string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>DigitaltextLabel2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>69</x>
+                    <y>40</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>2</string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>DigitaltextLabel3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>120</x>
+                    <y>40</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>3</string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+        </widget>
+        <widget class="KLed">
+            <property name="name">
+                <cstring>DigitalLed1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>20</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="state">
+                <enum>Off</enum>
+            </property>
+            <property name="color">
+                <color>
+                    <red>255</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital 1 input state</string>
+            </property>
+        </widget>
+        <widget class="KLed">
+            <property name="name">
+                <cstring>DigitalLed2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>20</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="state">
+                <enum>Off</enum>
+            </property>
+            <property name="color">
+                <color>
+                    <red>255</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital 2 input state</string>
+            </property>
+        </widget>
+        <widget class="KLed">
+            <property name="name">
+                <cstring>DigitalLed3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>121</x>
+                    <y>20</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="state">
+                <enum>Off</enum>
+            </property>
+            <property name="color">
+                <color>
+                    <red>255</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital 3 input state</string>
+            </property>
+        </widget>
+        <widget class="KLed">
+            <property name="name">
+                <cstring>DigitalLed4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>173</x>
+                    <y>20</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="state">
+                <enum>Off</enum>
+            </property>
+            <property name="color">
+                <color>
+                    <red>255</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital 4 input state</string>
+            </property>
+        </widget>
+        <widget class="KLed">
+            <property name="name">
+                <cstring>DigitalLed5</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>221</x>
+                    <y>20</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="state">
+                <enum>Off</enum>
+            </property>
+            <property name="color">
+                <color>
+                    <red>255</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Digital 5 input state</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupCounter1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>320</x>
+                <y>200</y>
+                <width>271</width>
+                <height>51</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Counter 1</string>
+        </property>
+        <widget class="QComboBox">
+            <item>
+                <property name="text">
+                    <string>1 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>2 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>5 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>10 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>50 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>100 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>500 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>1000 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>2000 ms</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>comboCounter1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>171</x>
+                    <y>20</y>
+                    <width>90</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Debounce value counter #1</string>
+            </property>
+        </widget>
+        <widget class="QLCDNumber">
+            <property name="name">
+                <cstring>Counter1Value</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>20</y>
+                    <width>71</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="segmentStyle">
+                <enum>Flat</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Counter #1</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>ClearCounter1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>100</x>
+                    <y>20</y>
+                    <width>60</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Reset</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Reset Counter #1</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupCounter2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>320</x>
+                <y>250</y>
+                <width>271</width>
+                <height>51</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Counter 2</string>
+        </property>
+        <widget class="QComboBox">
+            <item>
+                <property name="text">
+                    <string>1 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>2 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>5 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>10 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>50 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>100 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>500 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>1000 ms</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>2000 ms</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>comboCounter2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>171</x>
+                    <y>20</y>
+                    <width>90</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Debounce value counter #2</string>
+            </property>
+        </widget>
+        <widget class="QLCDNumber">
+            <property name="name">
+                <cstring>Counter2Value</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>20</y>
+                    <width>71</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="segmentStyle">
+                <enum>Flat</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Counter #2</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>ClearCounter2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>100</x>
+                    <y>20</y>
+                    <width>60</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Reset</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Reset Counter #2</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupDigitalButtonBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>200</x>
+                <y>10</y>
+                <width>110</width>
+                <height>90</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Digital</string>
+        </property>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>ClearAllDigitalButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>90</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Clear All</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Clear all digital outputs</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>SetAllDigitalButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>90</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Set All</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Set all digital outputs</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupAnalogButtonBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>200</x>
+                <y>110</y>
+                <width>110</width>
+                <height>90</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Analog</string>
+        </property>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>ClearAllAnalogButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>90</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Clear All</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Set all analog outputs low</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>SetAllAnalogButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>90</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Set All</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Set all analog outputs high</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupTestButtonBox</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>200</x>
+                <y>210</y>
+                <width>110</width>
+                <height>90</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Test</string>
+        </property>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>TestAnalogButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>90</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Analog</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Run analog tests</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>TestDigitalButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>90</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Digital</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Run digital output tests</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBoxAD2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>140</x>
+                <y>10</y>
+                <width>45</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>AD2</string>
+        </property>
+        <widget class="QScrollBar">
+            <property name="name">
+                <cstring>BarAD2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>16</x>
+                    <y>20</y>
+                    <width>20</width>
+                    <height>230</height>
+                </rect>
+            </property>
+            <property name="maxValue">
+                <number>255</number>
+            </property>
+            <property name="pageStep">
+                <number>1</number>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Analog input value - AD2</string>
+            </property>
+        </widget>
+        <widget class="QLCDNumber">
+            <property name="name">
+                <cstring>AD2Value</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>260</y>
+                    <width>30</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="numDigits">
+                <number>3</number>
+            </property>
+            <property name="segmentStyle">
+                <enum>Flat</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Analog value AD2</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBoxAD1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>100</x>
+                <y>10</y>
+                <width>45</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>AD1</string>
+        </property>
+        <widget class="QLCDNumber">
+            <property name="name">
+                <cstring>AD1Value</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>260</y>
+                    <width>30</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="numDigits">
+                <number>3</number>
+            </property>
+            <property name="segmentStyle">
+                <enum>Flat</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Analog value AD1</string>
+            </property>
+        </widget>
+        <widget class="QScrollBar">
+            <property name="name">
+                <cstring>BarAD1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>15</x>
+                    <y>20</y>
+                    <width>20</width>
+                    <height>230</height>
+                </rect>
+            </property>
+            <property name="maxValue">
+                <number>255</number>
+            </property>
+            <property name="pageStep">
+                <number>1</number>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Analog input value - AD1</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBoxDA2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>55</x>
+                <y>10</y>
+                <width>45</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>DA2</string>
+        </property>
+        <widget class="QLCDNumber">
+            <property name="name">
+                <cstring>DA2Value</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>260</y>
+                    <width>30</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="numDigits">
+                <number>3</number>
+            </property>
+            <property name="segmentStyle">
+                <enum>Flat</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Analog value DA2</string>
+            </property>
+        </widget>
+        <widget class="QScrollBar">
+            <property name="name">
+                <cstring>BarDA2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>15</x>
+                    <y>20</y>
+                    <width>20</width>
+                    <height>230</height>
+                </rect>
+            </property>
+            <property name="maxValue">
+                <number>255</number>
+            </property>
+            <property name="pageStep">
+                <number>1</number>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Analog output value - DA2</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBoxDA1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>45</width>
+                <height>290</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>DA1</string>
+        </property>
+        <widget class="QLCDNumber">
+            <property name="name">
+                <cstring>DA1Value</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>260</y>
+                    <width>30</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="numDigits">
+                <number>3</number>
+            </property>
+            <property name="segmentStyle">
+                <enum>Flat</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Analog value DA1</string>
+            </property>
+        </widget>
+        <widget class="QScrollBar">
+            <property name="name">
+                <cstring>BarDA1</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>15</x>
+                    <y>20</y>
+                    <width>20</width>
+                    <height>230</height>
+                </rect>
+            </property>
+            <property name="maxValue">
+                <number>255</number>
+            </property>
+            <property name="pageStep">
+                <number>1</number>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Analog output value - DA1</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupCard</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>320</x>
+                <y>10</y>
+                <width>271</width>
+                <height>51</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Card</string>
+        </property>
+        <widget class="QButtonGroup">
+            <property name="name">
+                <cstring>CardRadioGroup</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>19</y>
+                    <width>151</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="title">
+                <string></string>
+            </property>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>CardButton1</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>30</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>1</string>
+                </property>
+                <property name="checked">
+                    <bool>true</bool>
+                </property>
+                <property name="toolTip" stdset="0">
+                    <string>Select Card #1</string>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>CardButton3</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>80</x>
+                        <y>0</y>
+                        <width>30</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>3</string>
+                </property>
+                <property name="toolTip" stdset="0">
+                    <string>Select Card #3</string>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>CardButton2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>40</x>
+                        <y>0</y>
+                        <width>30</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>2</string>
+                </property>
+                <property name="toolTip" stdset="0">
+                    <string>Select Card #2</string>
+                </property>
+            </widget>
+            <widget class="QRadioButton">
+                <property name="name">
+                    <cstring>CardButton4</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>120</x>
+                        <y>0</y>
+                        <width>30</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>4</string>
+                </property>
+                <property name="toolTip" stdset="0">
+                    <string>Select Card #4</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>ConnectButton</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>179</x>
+                    <y>15</y>
+                    <width>80</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Connect</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Connect to selected card</string>
+            </property>
+        </widget>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>ConnectButton</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>ConnectButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>CardButton1</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>CardButton1_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>CardButton2</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>CardButton2_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>ClearCounter2</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>ClearCounter2_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>OutputBox1</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>OutputBox1_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>ClearCounter1</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>ClearCounter1_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>OutputBox8</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>OutputBox8_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>OutputBox7</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>OutputBox7_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>OutputBox2</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>OutputBox2_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>OutputBox3</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>OutputBox3_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>OutputBox4</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>OutputBox4_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>OutputBox5</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>OutputBox5_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>OutputBox6</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>OutputBox6_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>SetAllAnalogButton</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>SetAllAnalogButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>ClearAllAnalogButton</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>ClearAllAnalogButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>SetAllDigitalButton</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>SetAllDigitalButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>ClearAllDigitalButton</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>ClearAllDigitalButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>BarAD2</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>K8055QT</receiver>
+        <slot>BarAD2_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>BarAD1</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>K8055QT</receiver>
+        <slot>BarAD1_valueChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>comboCounter2</sender>
+        <signal>activated(int)</signal>
+        <receiver>K8055QT</receiver>
+        <slot>comboCounter2_activated(int)</slot>
+    </connection>
+    <connection>
+        <sender>comboCounter1</sender>
+        <signal>activated(int)</signal>
+        <receiver>K8055QT</receiver>
+        <slot>comboCounter1_activated(int)</slot>
+    </connection>
+    <connection>
+        <sender>TestDigitalButton</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>TestDigitalButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>TestAnalogButton</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>TestAnalogButton_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>CardButton3</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>CardButton3_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>CardButton4</sender>
+        <signal>clicked()</signal>
+        <receiver>K8055QT</receiver>
+        <slot>CardButton4_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">frmk8055qt.ui.h</include>
+</includes>
+<variables>
+    <variable access="private">Kpriv;</variable>
+    <variable access="public">Kp = False;</variable>
+</variables>
+<slots>
+    <slot>ConnectButton_clicked()</slot>
+    <slot>CardButton1_clicked()</slot>
+    <slot>CardButton2_clicked()</slot>
+    <slot>CardButton3_clicked()</slot>
+    <slot>CardButton4_clicked()</slot>
+    <slot>init()</slot>
+    <slot>ClearCounter1_clicked()</slot>
+    <slot>ClearCounter2_clicked()</slot>
+    <slot>OutputBox1_clicked()</slot>
+    <slot>OutputBox2_clicked()</slot>
+    <slot>OutputBox3_clicked()</slot>
+    <slot>OutputBox4_clicked()</slot>
+    <slot>OutputBox5_clicked()</slot>
+    <slot>OutputBox6_clicked()</slot>
+    <slot>OutputBox7_clicked()</slot>
+    <slot>OutputBox8_clicked()</slot>
+    <slot>SetAllAnalogButton_clicked()</slot>
+    <slot>ClearAllAnalogButton_clicked()</slot>
+    <slot>SetAllDigitalButton_clicked()</slot>
+    <slot>ClearAllDigitalButton_clicked()</slot>
+    <slot>BarAD1_valueChanged( int )</slot>
+    <slot>BarAD2_valueChanged( int )</slot>
+    <slot>comboCounter2_activated( int )</slot>
+    <slot>comboCounter1_activated( int )</slot>
+    <slot>TestDigitalButton_clicked()</slot>
+    <slot>TestAnalogButton_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kled.h</includehint>
+    <includehint>kled.h</includehint>
+    <includehint>kled.h</includehint>
+    <includehint>kled.h</includehint>
+    <includehint>kled.h</includehint>
+</includehints>
+</UI>

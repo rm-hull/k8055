@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<!-- 
+ * Copyright (C) 2008 Martin Pischky (mailto:martin@pischky.de)  
+ *
+ * This file (build.xml) is part of libk8055/jk8055.
+ * jk8055 - a java wrapper for libk8055
+ *
+ *
+ * libk8055/jk8055 is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+ *
+ * $Id: build.xml,v 1.4 2008/07/28 09:58:30 pischky Exp $ 
+-->
+<project name="jk8055" default="all">
+    <description>
+            java wrapper for libk8055
+    </description>
+	
+    <property environment="env" />
+
+    <!-- some files -->
+	
+	<property name="file.base" value="jk8055" />
+	<property name="file.c"    location="src/c/${file.base}.c" />
+	
+	<property name="version"   value="0.3" />
+		
+    <!-- set global properties for building -->
+	
+    <property file="build.properties" />
+    <property file="${user.home}/build.properties" />
+    <!-- example (build.properties is not stored in cvs):
+    # My installation of M$ VS 2003. 
+    # Use VS 2003 Command Prompt to get the value
+    VSINSTALLDIR=D:\\Programme\\Visual Studio .NET 2003\\Common7\\IDE
+    VCINSTALLDIR=D:\\Programme\\Microsoft Visual Studio .NET 2003
+    # My installation of the java development kit
+    jdk.home=D:\\j2sdk1.4.2_11
+    # My installation of the Velleman "K8055D_C.lib", "K8055D_C.DLL",
+    # "K8055D_C.h" and "K8055D.DLL"
+    VellemanDir=D:\\Programme\\Velleman\\K8055
+    -->
+
+	<!-- set properties if not definded in build.properties -->
+	
+	<!-- guess java development kit -->
+	<property name="jdk.home" value="${env.JDK_HOME}" />
+	
+	<!-- guess c compiler for windows (eg.: microsoft visual studio 2003) -->
+	<property name="VSINSTALLDIR"
+	          location="${env.ProgramFiles}\Microsoft Visual Studio .NET 2003\Common7\IDE" />
+	<property name="VCINSTALLDIR" 
+              location="${env.ProgramFiles}\Microsoft Visual Studio .NET 2003" />
+	<property name="MSVCDir"
+		      location="${VCINSTALLDIR}\VC7" />
+	<property name="DevEnvDir"
+	          location="${VSINSTALLDIR}" />
+	<property name="VellemanDir"
+	          location="C:\Program Files\Velleman\K8055" />
+	
+	<target name="init">
+        <echo message="running ant '${ant.version}'" level="info" />
+        <echo message="on java '${ant.java.version}'" level="info" />
+        <echo message="java.home='${java.home}'" level="info" />
+        <echo message="jdk.home ='${jdk.home}'" level="info" />
+		<mkdir dir="build/java" />
+		<mkdir dir="build/c"    />
+		<mkdir dir="dist"       />
+        <mkdir dir="dist/win32" />
+        <mkdir dir="dist/linux" />
+	</target>
+
+    <target name="compile-java" depends="init">
+        <javac srcdir="src/java" destdir="build/java">
+		    <include name="**/*.java"/>
+        	<exclude name="**/*Test.java"/>
+        </javac>
+    	<javah classpath="build/java"
+    		   class="net.sf.libk8055.jk8055.JK8055" 
+    		   outputfile="build/c/jk8055.h" />
+    </target>
+	
+	<target name="compile-c" depends="compile-java">
+    	<javah classpath="build/java"
+    		   class="net.sf.libk8055.jk8055.JK8055" 
+    		   outputfile="build/c/jk8055.h" />
+		<exec executable="gcc" dir="build/c" os="Linux">
+			<arg line='-o lib${file.base}.so 
+				       -shared 
+				       -Wl,-soname,lib${file.base}.so 
+				       -I${jdk.home}/include 
+                       -I${jdk.home}/include/linux 
+				       -I. 
+				       -lk8055
+				       "${file.c}"' />
+		</exec>
+		<exec executable="${MSVCDir}\BIN\cl.exe" dir="build/c" 
+			  os="Windows 2000, Windows XP" failonerror="true">
+			<!-- be carefull with case here ! -->
+			<env key="Path" path="${DevEnvDir};${MSVCDir}\BIN;${env.Path}" />
+            <env key="INCLUDE" path="${MSVCDir}\INCLUDE;${env.INCLUDE}" />
+            <env key="LIB" path="${MSVCDir}\LIB;${env.LIB}" />
+			<arg line='-I "${jdk.home}\include" 
+			           -I "${jdk.home}\include\win32" 
+                       -I "${VellemanDir}" 
+                       -I. 
+			           -DUSE_VELLEMAN_DLL
+                       -LD 
+                       "${file.c}"
+                       -Fe${file.base}.dll
+			           -link "${VellemanDir}\K8055D_C.lib"' />
+		</exec>
+	</target>
+	
+	<target name="dist" depends="compile-c" 
+        description="create files for distribution">
+        <copy todir="dist/linux" failonerror="false">
+            <fileset dir="build/c">
+                <include name="lib${file.base}.so"/>
+            </fileset>
+        </copy>
+        <copy todir="dist/win32" failonerror="false">
+            <fileset dir="build/c">
+                <include name="${file.base}.dll"/>
+            </fileset>
+            <fileset dir="${VellemanDir}">
+                <include name="K8055D_C.DLL"/>
+                <include name="K8055D.DLL"/>
+            </fileset>
+        </copy>
+		<jar destfile="dist/${file.base}-${version}.jar" basedir="build/java">
+            <manifest>
+            	<attribute name="Built-By" value="${user.name}"/>
+                <attribute name="JK8055-Version" value="${version}"/>
+            </manifest>
+		</jar>
+	</target>
+	
+   <target name="javadoc" depends="compile-java" 
+   	       description="create component Javadoc documentation">
+	   <mkdir dir="build/docs"/>
+	   <mkdir dir="build/docs/api"/>
+       <javadoc destdir="build/docs/api" 
+       	        overview="src/java/net/sf/libk8055/jk8055/overview.html" 
+       	        packagenames="net.sf.libk8055.jk8055" 
+       	        author="true" 
+       	        version="true" 
+       	        doctitle="&lt;h1&gt;JK8055&lt;/h1&gt;" 
+       	        windowtitle="JK8055 (Version ${version})" 
+       	        bottom="Copyright &amp;copy; 2008 by Martin Pischky" 
+       	        use="true" 
+       	        link="http://java.sun.com/j2se/1.4/docs/api/">
+            <fileset dir="src/java">
+                <include name="**/*.java"/>
+                <exclude name="**/*Test.java"/>
+       		</fileset>
+	    </javadoc>
+        <jar jarfile="dist/${file.base}-${version}-javadoc.jar" 
+        	 basedir="build/docs/api" />
+    </target>
+	
+	<target name="junit" depends="compile-c" 
+		    description="run junit tests" >
+		<!-- we assume that junit.jar is in ant's lib directory -->
+		<mkdir dir="build/reports" />
+        <mkdir dir="build/junit" />
+        <javac srcdir="src/java" destdir="build/junit">
+            <include name="**/*Test.java"/>
+        </javac>
+		<junit printsummary="yes" 
+		       haltonfailure="yes" showoutput="yes">
+			<classpath>
+                <pathelement location="build/java" />
+                <pathelement location="build/junit" />
+                <pathelement path="${java.class.path}" />
+			</classpath>
+			<env key="Path" path="build/c;${VellemanDir};${env.Path}"/>
+            <env key="LD_LIBRARY_PATH" path="build/c:${env.LD_LIBRARY_PATH}"/>
+            <formatter type="plain"/>
+		    <batchtest fork="yes" todir="build/reports">
+		    	 <fileset dir="src/java">
+		    	     <include name="**/*Test.java"/>
+                 </fileset>
+			</batchtest>
+		</junit>
+	</target>
+	
+	<target name="all" depends="dist, javadoc"  
+	        description="--> java wrapper for libk8055">
+	</target>
+
+	<target name="clean">
+		<delete dir="build"/>
+	</target>
+	
+	<target name="distclean" depends="clean">
+        <delete dir="dist"/>
+	</target>
+
+</project>
+
+
