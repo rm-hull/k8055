@@ -3,7 +3,7 @@ k8055
 
 Velleman k8055 linux driver sources for the Raspberry Pi
 
-![Alt text](/path/to/img.jpg)
+![Velleman k8055 board](master/k8055.jpg)
 
 From [libk8055.sourceforge.net](libk8055.sourceforge.net):
 
