@@ -47,3 +47,10 @@ License
 -------
 [GPL](http://www.gnu.org/licenses/gpl.html)
 
+References
+----------
+* http://www.velleman.eu/downloads/0/user/usermanual_k8055_dll_uk.pdf
+
+* http://george-smart.co.uk/wiki/Nokia_3310_LCD
+
+* https://sites.google.com/site/vellemank8055/
