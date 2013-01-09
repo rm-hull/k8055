@@ -4,7 +4,7 @@
 #
 # change this to your distribution default
 # usually /usr/local or /usr
-PREFIX = ?/usr/local
+PREFIX = /usr/local
 CC = gcc
 EXEC = k8055
 VERSION =0.4.1
