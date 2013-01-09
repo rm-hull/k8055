@@ -10,7 +10,7 @@ k8055 − read from/write to the velleman k8055 USB I/O board
 SYNOPSIS
 --------
 
-    **k8055 [-p:** *board\_address* **] [** option1 **] [** option2 **] ...**
+    k8055 [-p: board_address] [option1] [option2] ...
 
 DESCRIPTION
 -----------
@@ -79,12 +79,17 @@ Note: timestamp is the number of msec when data is read since program start
 
 Example: *499;16;128;230;9;8*
 
-499 : Measure done 499 msec after program start 
-16 : Digital input value is 10000 (I5=1, all other are 0) 
-128 : Analog 1 input value is 128 
-230 : Analog 2 input value is 230 
-9 : Counter 1 value is 9 
-8 : Counter 2 value is 8
+*499* : Measure done 499 msec after program start
+ 
+*16* : Digital input value is 10000 (I5=1, all other are 0) 
+
+*128* : Analog 1 input value is 128 
+
+*230* : Analog 2 input value is 230 
+
+*9* : Counter 1 value is 9 
+
+*8* : Counter 2 value is 8
 
 EXAMPLES
 --------
@@ -97,11 +102,12 @@ value 25 and analog output 2 to 203.
 
 this will read the inputs 5 times with 500ms interval producing
 following output (input2/timer2 activade for 1 second): 
- 20;0;109;190;0;0 
- 513;0;109;190;0;0 
- 1020;2;109;190;0;1 
- 1515;2;109;190;0;1 
- 2011;0;109;190;0;1
+
+    20;0;109;190;0;0 
+    513;0;109;190;0;0 
+    1020;2;109;190;0;1 
+    1515;2;109;190;0;1 
+    2011;0;109;190;0;1
 
 DIAGNOSTICS
 -----------
