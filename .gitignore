@@ -15,3 +15,7 @@
 *.exe
 *.out
 *.app
+
+k8055
+pyk8055/libk8055_wrap.c
+pyk8055/pyk8055.py
