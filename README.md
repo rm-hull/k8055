@@ -64,9 +64,13 @@ The GTK gui must also be executed with root permissions, but GTK doesn't allow s
 
     $ gksu k8055gui
 
+And providing an X display is present, the following dialog will be displayed:
+
+![k8055gui screenshot](https://raw.github.com/rm-hull/k8055/master/gui/k8055gui.png)
+
 Bugs
 ----
-The **k8055gui** does not appear to
+The **k8055gui** does not appear to properly set the digital outs.
 
 License
 -------

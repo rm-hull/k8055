@@ -11,6 +11,7 @@ VERSION =0.4.1
 BINDIR = $(PREFIX)/bin
 LIBDIR = $(PREFIX)/lib
 PYLIBDIR = pyk8055
+GUIDIR = gui
 INCLUDEDIR = $(PREFIX)/include
 MANDIR = $(PREFIX)/man/man1
 OBJS = main.o libk8055.o
@@ -41,9 +42,13 @@ k8055_prog: $(OBJS)
 pylib: $(PYLIBDIR)/libk8055.i libk8055.c
 	export VERSION=$(VERSION); $(MAKE) -C $(PYLIBDIR)
 
+k8055gui: libk8055.so.$(VERSION)
+	$(MAKE) -C $(GUIDIR)
+
 clean:	
 	rm -f *.o libk8055.so libk8055.so.$(VERSION) $(EXEC) libk8055.a
 	@$(MAKE) -C $(PYLIBDIR) clean
+	@$(MAKE) -C $(GUIDIR) clean
 
 install: k8055_prog libk8055.so.$(VERSION)
 	cp -f $(EXEC) $(BINDIR)/
@@ -63,6 +68,9 @@ install: k8055_prog libk8055.so.$(VERSION)
 
 pyinstall: $(PYLIBDIR)/libk8055.i
 	@$(MAKE) -C $(PYLIBDIR) install
+
+guiinstall: $(GUIDIR)/k8055gui
+	@$(MAKE) -C $(GUIDIR) install
 
 uninstall:
 	rm -f $(BINDIR)/$(EXEC) $(LIBDIR)/libk8055* $(INCLUDEDIR)/k8055.h
