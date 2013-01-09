@@ -73,23 +73,18 @@ OUTPUT
 ------
 The k8055 dumps the result to stdout. 
 
-*Output:(timestamp);(digital);(analog1);(analog2);(counter1);(counter2)*
+**Output:** *(timestamp);(digital);(analog1);(analog2);(counter1);(counter2)*
 
 Note: timestamp is the number of msec when data is read since program start
 
 Example: *499;16;128;230;9;8*
 
-*499* : Measure done 499 msec after program start
- 
-*16* : Digital input value is 10000 (I5=1, all other are 0) 
-
-*128* : Analog 1 input value is 128 
-
-*230* : Analog 2 input value is 230 
-
-*9* : Counter 1 value is 9 
-
-*8* : Counter 2 value is 8
+    499 : Measure done 499 msec after program start
+     16 : Digital input value is 10000 (I5=1, all other are 0) 
+    128 : Analog 1 input value is 128 
+    230 : Analog 2 input value is 230 
+      9 : Counter 1 value is 9 
+      8 : Counter 2 value is 8
 
 EXAMPLES
 --------
