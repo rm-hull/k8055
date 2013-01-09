@@ -1,6 +1,5 @@
 k8055
 =====
-
 Velleman k8055 linux driver and GUI sources for the Raspberry Pi
 
 ![Velleman k8055 board](https://raw.github.com/rm-hull/k8055/master/k8055.jpg)
@@ -78,6 +77,8 @@ License
 
 References
 ----------
+* http://www.velleman.eu/products/view/?country=be&lang=en&id=351346
+
 * http://www.velleman.eu/downloads/0/user/usermanual_k8055_dll_uk.pdf
 
 * http://george-smart.co.uk/wiki/Nokia_3310_LCD
