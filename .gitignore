@@ -17,5 +17,6 @@
 *.app
 
 k8055
+k8055gui
 pyk8055/libk8055_wrap.c
 pyk8055/pyk8055.py
