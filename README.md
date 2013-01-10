@@ -1,6 +1,7 @@
 k8055
 =====
-Velleman k8055 linux driver and GUI sources for the Raspberry Pi
+Velleman k8055 linux driver and GUI sources built and tested specifically 
+for the Raspberry Pi [Debian Wheezy, 3.6.11+ #348 armv6l GNU/Linux].
 
 ![Velleman k8055 board](https://raw.github.com/rm-hull/k8055/master/k8055.jpg)
 
