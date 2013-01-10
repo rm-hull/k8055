@@ -4,7 +4,7 @@ Velleman k8055 linux driver and GUI sources for the Raspberry Pi
 
 ![Velleman k8055 board](https://raw.github.com/rm-hull/k8055/master/k8055.jpg)
 
-From [libk8055.sourceforge.net](libk8055.sourceforge.net):
+From http://libk8055.sourceforge.net :
 
 >"This software allows access to Velleman's K8055 card. This software was
 developed to replace all other half-complete softwares for the k8055 board
