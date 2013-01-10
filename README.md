@@ -38,7 +38,7 @@ Install pre-requisites as follows, and build:
     $ make all
     $ sudo make install
     $ make pylib k8055gui
-    $ sudo make pylibinstall guiinstall
+    $ sudo make pyinstall guiinstall
 
 Usage
 -----
@@ -49,23 +49,33 @@ check that the device is recognised:
     [ 4508.616155] usb 1-1.2: Manufacturer: Velleman 
     [ 4508.631260] hid-generic 0003:10CF:5500.0001: hiddev0,hidraw0: USB HID v1.00 Device [Velleman  USB K8055] on usb-bcm2708_usb-1.2/input0
 
-Then invoke the **k8055** command with elevated privileges:
+Then invoke the **k8055** command with elevated privileges (root permission is needed for 
+udev access):
 
     $ sudo k8055 -d:147
 
-This should switch on digital LEDs 1, 2, 5 and 8. See the [manual](https://github.com/rm-hull/k8055/blob/master/MANUAL.md) page for more details.
+This should switch on digital LEDs 1, 2, 5 and 8. See the [manual](https://github.com/rm-hull/k8055/blob/master/MANUAL.md)
+page for more details.
 
-Alternatively, use [setuid](https://en.wikipedia.org/wiki/Setuid) sticky bits to always run k8055 with root permissions:
+Alternatively, use [setuid](https://en.wikipedia.org/wiki/Setuid) sticky bits to always 
+run k8055 with root permissions:
 
     $ chmod u+s /usr/local/bin/k8055
 
-The GTK gui must also be executed with root permissions, but GTK doesn't allow setuid, so start the gui using:
+The GTK gui must also be executed with root permissions, but GTK doesn't allow setuid, so 
+start the gui using:
 
     $ gksu k8055gui
 
 And providing an X display is present, the following dialog will be displayed:
 
 ![k8055gui screenshot](https://raw.github.com/rm-hull/k8055/master/gui/k8055gui.png)
+
+udev Rules
+----------
+If you do not want to (or cannot) run the command line or gui with sudo permissions, then 
+copy the `velleman.rules` files to `/etc/udev/rules.d`, and create a group called *k8055*
+and assign to those users who should have access.
 
 Bugs
 ----
