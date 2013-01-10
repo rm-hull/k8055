@@ -52,7 +52,14 @@ check that the device is recognised:
 Then invoke the **k8055** command with elevated privileges (root permission is needed for 
 udev access):
 
-    $ sudo k8055 -d:147
+    $ sudo k8055 -debug -d:147
+    Parameters : Card=0 Analog1=-1 Analog2=-1 Digital=147
+    Velleman Device Found @ Address 005 Vendor 0x010cf Product ID 0x05500
+    Get driver name: - could not get bound driver: No data available
+    Found interface 0
+    Took over the device
+    Set digital:147=>0
+    25;0;89;118;0;11
 
 This should switch on digital LEDs 1, 2, 5 and 8. See the [manual](https://github.com/rm-hull/k8055/blob/master/MANUAL.md)
 page for more details.
@@ -95,3 +102,4 @@ References
 
 * https://sites.google.com/site/vellemank8055/
 
+* http://www.robert-arnold.de/cms/en/2010/10/zugriff-fur-nicht-root-user-auf-usb-board-k8055-unter-ubuntu-9-10-erlauben/
