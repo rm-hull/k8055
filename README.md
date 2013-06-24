@@ -46,7 +46,7 @@ Usage
 Plug in the K8055 board, observe that the power LED is illuminated and at the command-line,
 check that the device is recognised:
 
-    $ $ dmesg | grep Velleman
+    $ dmesg | grep Velleman
     [ 4508.616155] usb 1-1.2: Manufacturer: Velleman 
     [ 4508.631260] hid-generic 0003:10CF:5500.0001: hiddev0,hidraw0: USB HID v1.00 Device [Velleman  USB K8055] on usb-bcm2708_usb-1.2/input0
 
