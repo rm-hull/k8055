@@ -84,7 +84,7 @@ shared libraries ..... cannot open shared object file: No such file or directory
 
     $ sudo ldconfig -v
 
-to force a rescan of the shared libraries (as reported in issue #1) and retry starting 
+to force a rescan of the shared libraries (as reported in issue [#1](https://github.com/rm-hull/k8055/issues/1)) and retry starting 
 the gui again.
 
 udev Rules
