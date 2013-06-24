@@ -79,6 +79,14 @@ And providing an X display is present, the following dialog will be displayed:
 
 ![k8055gui screenshot](https://raw.github.com/rm-hull/k8055/master/gui/k8055gui.png)
 
+If you experience an error message when trying to run the k8055gui: **error while loading 
+shared libraries ..... cannot open shared object file: No such file or directory.** then try:
+
+    $ sudo ldconfig -v
+
+to force a rescan of the shared libraries (as reported in issue #1) and retry starting 
+the gui again.
+
 udev Rules
 ----------
 If you do not want to (or cannot) run the command line or gui with sudo permissions, then 
