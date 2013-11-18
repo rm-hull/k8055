@@ -4,7 +4,7 @@ CC      = g++
 # Specifies compilator options
 CFLAGS  = `wx-config --cxxflags`
 LDFLAGS = `wx-config --libs`
-LDLIBS  = -lusb -lm -lk8055
+LDLIBS  = -lm -lk8055 `libusb-config --libs` 
 PREFIX = /usr/local
 BINDIR = $(PREFIX)/bin
 
@@ -22,7 +22,7 @@ all: $(PROG)
 
 # Compilation and link
 $(PROG): $(OBJS)
-	$(CC) $(LDFLAGS) -o $(PROG) $(OBJS) $(LDLIBS)
+	$(CC) -o $(PROG) $(OBJS) $(LDLIBS) $(LDFLAGS)
 
 .cpp.o:
 	$(CC)   $(CFLAGS) -c $< -o $@
