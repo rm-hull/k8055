@@ -112,3 +112,7 @@ References
 * https://sites.google.com/site/vellemank8055/
 
 * http://www.robert-arnold.de/cms/en/2010/10/zugriff-fur-nicht-root-user-auf-usb-board-k8055-unter-ubuntu-9-10-erlauben/
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rm-hull/k8055/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
