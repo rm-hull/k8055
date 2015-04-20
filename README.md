@@ -36,7 +36,7 @@ How to build & install
 Install pre-requisites as follows, and build:
 
     $ sudo apt-get install git python-dev libusb-dev swig libwxgtk2.8-dev
-    $ git clone https://github.com/rm-hull/k8055.git
+    $ git clone https://github.com/sebastianzillessen/k8055.git
     $ cd k8055
     $ make all
     $ sudo make install
