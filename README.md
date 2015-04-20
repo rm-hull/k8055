@@ -95,6 +95,12 @@ If you do not want to (or cannot) run the command line or gui with sudo permissi
 copy the `velleman.rules` files to `/etc/udev/rules.d`, and create a group called *k8055*
 and assign to those users who should have access.
 
+
+    $ sudo groupadd k8055
+    $ sudo usermod -a -G k8055 `whoami` # granting access to the usb board for the local user
+    $ sudo reboot
+    $ groups # check that the current user has the group k8055, now you can access the board.
+
 Bugs
 ----
 The **k8055gui** does not appear to properly set the digital outs.
