@@ -36,7 +36,7 @@ How to build & install
 Install pre-requisites as follows, and build:
 
     $ sudo apt-get install git python-dev libusb-dev swig libwxgtk2.8-dev
-    $ git clone https://github.com/sebastianzillessen/k8055.git
+    $ git clone https://github.com/rm-hull/k8055.git
     $ cd k8055
     $ make all
     $ sudo make install
@@ -120,7 +120,4 @@ References
 * https://sites.google.com/site/vellemank8055/
 
 * http://www.robert-arnold.de/cms/en/2010/10/zugriff-fur-nicht-root-user-auf-usb-board-k8055-unter-ubuntu-9-10-erlauben/
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rm-hull/k8055/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
