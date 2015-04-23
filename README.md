@@ -1,6 +1,6 @@
-k8055
+k8055(N) / VM110(N)
 =====
-Velleman k8055 linux driver and GUI sources built and tested specifically 
+Velleman k8055(N) or VM110(N) linux driver and GUI sources built and tested specifically 
 for the Raspberry Pi [Debian Wheezy, 3.6.11+ #348 armv6l GNU/Linux].
 
 ![Velleman k8055 board](https://raw.github.com/rm-hull/k8055/master/k8055.jpg)
@@ -36,7 +36,7 @@ How to build & install
 Install pre-requisites as follows, and build:
 
     $ sudo apt-get install git python-dev libusb-dev swig libwxgtk2.8-dev
-    $ git clone https://github.com/rm-hull/k8055.git
+    $ git clone https://github.com/sebastianzillessen/k8055.git
     $ cd k8055
     $ make all
     $ sudo make install
@@ -94,6 +94,12 @@ udev Rules
 If you do not want to (or cannot) run the command line or gui with sudo permissions, then 
 copy the `velleman.rules` files to `/etc/udev/rules.d`, and create a group called *k8055*
 and assign to those users who should have access.
+
+
+    $ sudo groupadd k8055
+    $ sudo usermod -a -G k8055 `whoami` # granting access to the usb board for the local user
+    $ sudo reboot
+    $ groups # check that the current user has the group k8055, now you can access the board.
 
 Bugs
 ----
