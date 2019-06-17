@@ -5,12 +5,12 @@ from distutils.core import setup, Extension
 
 __revision__ = "$Id: setup.py,v 1.3 2007/03/28 10:17:57 pjetur Exp $"
 
-if os.environ.has_key('VERSION'):
+if 'VERSION' in os.environ:
 	version=os.environ['VERSION']
 else:
 	from subprocess import *
-    	try:
-    		version = Popen(["grep ^VERSION ../Makefile | cut -d '=' -f 2 | tr -d '\n'"], stdout=PIPE, shell=True).communicate()[0]
+	try:
+		version = Popen(["grep ^VERSION ../Makefile | cut -d '=' -f 2 | tr -d '\n'"], stdout=PIPE, shell=True).communicate()[0].decode('ascii')
 	except:
 		version='?.?'
 
