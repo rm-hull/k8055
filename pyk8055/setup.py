@@ -10,7 +10,7 @@ if 'VERSION' in os.environ:
 else:
 	from subprocess import *
 	try:
-		version = Popen(["grep ^VERSION ../Makefile | cut -d '=' -f 2 | tr -d '\n'"], stdout=PIPE, shell=True).communicate()[0]
+		version = Popen(["grep ^VERSION ../Makefile | cut -d '=' -f 2 | tr -d '\n'"], stdout=PIPE, shell=True).communicate()[0].decode('ascii')
 	except:
 		version='?.?'
 
