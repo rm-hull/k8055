@@ -9,8 +9,8 @@ if os.environ.has_key('VERSION'):
 	version=os.environ['VERSION']
 else:
 	from subprocess import *
-    	try:
-    		version = Popen(["grep ^VERSION ../Makefile | cut -d '=' -f 2 | tr -d '\n'"], stdout=PIPE, shell=True).communicate()[0]
+	try:
+		version = Popen(["grep ^VERSION ../Makefile | cut -d '=' -f 2 | tr -d '\n'"], stdout=PIPE, shell=True).communicate()[0]
 	except:
 		version='?.?'
 
